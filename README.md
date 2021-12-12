@@ -16,13 +16,13 @@ Smuggler is currently a very basic LoadLibraryA injector that also hooks IsDebug
 ## Pending Commit - TBD
 I am working on making a manually mapped loader opposed to LoadLibraryA. LoadLibrary injection is the simplist possible method of injection, but also the most insecure. This is the most widely used technique, however it has some problems:
 
-LoadLibraryA:
+## LoadLibraryA:
 The DLL must be loaded off the disk of the host system, this stops us from loading a buffer of bytes/byte array.
 The file cannot be modified while it is injected.
 Callback of the function can be detected by an anti-cheat.
 Enumerable, will always be in PEB and detectable via iteration.
 
-Manual Mapping:
+## Manual Mapping:
 Doing what LoadLibraryA does essentially without more callback or linking to the PEB.
 Possible to load via byte buffer or any format, does not need to be present on the host system(eg. loading from a web server)
 Not *Easily* Enumerable
